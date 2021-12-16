@@ -1,4 +1,4 @@
-# TP2 Made by STANKOVIC Adrien, DURAT Nicolas and MAJOUL Mohamed in ST2TRD course
+# TP2 Made by DURAT Nicolas, MAJOUL Mohamed and STANKOVIC Adrien in ST2TRD course
 The path to .exe file is "TP2_ST2TRD/bin/Debug/netcoreapp3.1/".  
 We implement Caesar, Vigenere and Binary encryption method.  
 The Caesar does not function well with Uppercase character.  
