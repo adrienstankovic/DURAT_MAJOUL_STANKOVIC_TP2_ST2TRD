@@ -1,0 +1,72 @@
+﻿<Window x:Class="TP2_ST2TRD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TP2_ST2TRD"
+        mc:Ignorable="d"
+        Title="Crypt and Decrypt Message" Height="450" Width="700" ResizeMode="CanResizeWithGrip" Background="LightGray">
+    <Grid>
+        <StackPanel>
+            <Label Content="Crypt and Decrypt" HorizontalAlignment="Center" FontSize="32" />
+            <Grid Height="300" Margin="12,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Name="InputTextBox" Text="Input" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"  Margin="25,0,0,0"/>
+                <TextBox Name="OutputTextBox" Text="Output" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="25,0,0,0"/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox Name="EncryptionComboBox" Height="25" Width="100"  Grid.Row="0" SelectedIndex="0">
+                        <ComboBoxItem Content="Caesar"/>
+                        <ComboBoxItem Content="Binary"/>
+                        <ComboBoxItem Content="Vigenere"/>
+                    </ComboBox>
+                    <TextBox Name ="InputKeyBox" Text="Key" Grid.Row="1" TextWrapping="Wrap" Width="120" Height="20" HorizontalAlignment="Center"/>
+                    <CheckBox Name="ConvertCheckBox" Content="Decrypt the text" Grid.Row="2" Height="25" HorizontalAlignment="Center"/>
+                    <Button Click="ButtonGo_Click" Content="GO !!!" Grid.Row="3" HorizontalAlignment="Center">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DarkGray"></Setter>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="120" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBox Name ="fileNameBox" Text="File Path" Grid.Row="4" TextWrapping="Wrap" Width="120" Height="50" HorizontalAlignment="Center"/>
+                    <Button Click="ButtonLoad_Click" Content="Load" Grid.Row="5" HorizontalAlignment="Center">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="DarkGray"/>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="120" Height="25" CornerRadius="12" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
